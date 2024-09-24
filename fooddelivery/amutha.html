@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- Important to make website responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amutha Restaurant - Menu</title>
+
+    <!-- Link our CSS file -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        h1 {
+            width: 300px;
+            margin: 0 auto;
+        }
+
+        /* Centers horizontally */
+        .food-menu-img img {
+            width: 120px;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .clearfix {
+            clear: both;
+        }
+
+        /* Style for the order summary box */
+    </style>   
+</head>
+
+<body>
+    <!-- Navbar Section Starts Here -->
+    <section class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="#" title="Logo">
+                    <img src="logo.png" alt="Restaurant Logo" class="img-responsive">
+                </a>
+            </div>
+
+            <div class="menu text-right">
+                <ul>
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="restaurant.html">Restaurants</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="clearfix"></div>
+        </div>
+    </section>
+    <!-- Navbar Section Ends Here -->
+
+    <!-- Restaurant Menu Section Starts Here -->
+    <section class="food-menu">
+        <div class="container">
+            <h2 class="text-center">Amutha Restaurant Menu</h2>
+
+            <!-- First Food Item -->
+            <div class="food-menu-box">
+                <div class="food-menu-img">
+                    <img src="paneer-butter-masala.jpg" alt="Paneer Butter Masala" class="img-responsive img-curve">
+                </div>
+
+                <div class="food-menu-desc">
+                    <h4>Paneer Butter Masala</h4>
+                    <p class="food-price">₹220</p>
+                    <p class="food-detail">
+                        Cottage cheese cooked in a rich, creamy tomato-based gravy with butter and spices.
+                    </p>
+                    <br>
+                    <a href="javascript:void(0);" class="btn btn-primary" onclick="addToOrder('Paneer Butter Masala', 220)">Order Now</a>
+                </div>
+            </div>
+
+            <!-- Second Food Item -->
+            <div class="food-menu-box">
+                <div class="food-menu-img">
+                    <img src="dal-makhani.jpg" alt="Dal Makhani" class="img-responsive img-curve">
+                </div>
+
+                <div class="food-menu-desc">
+                    <h4>Dal Makhani</h4>
+                    <p class="food-price">₹180</p>
+                    <p class="food-detail">
+                        Slow-cooked black lentils in a creamy and buttery gravy, spiced with Indian masalas.
+                    </p>
+                    <br>
+                    <a href="javascript:void(0);" class="btn btn-primary" onclick="addToOrder('Dal Makhani', 180)">Order Now</a>
+                </div>
+            </div>
+
+            <!-- Third Food Item -->
+            <div class="food-menu-box">
+                <div class="food-menu-img">
+                    <img src="naan.jpg" alt="Butter Naan" class="img-responsive img-curve">
+                </div>
+
+                <div class="food-menu-desc">
+                    <h4>Butter Naan</h4>
+                    <p class="food-price">₹40</p>
+                    <p class="food-detail">
+                        Soft, buttery naan served hot, perfect to pair with any curry.
+                    </p>
+                    <br>
+                    <a href="javascript:void(0);" class="btn btn-primary" onclick="addToOrder('Butter Naan', 40)">Order Now</a>
+                </div>
+            </div>
+
+            <!-- Fourth Food Item -->
+            <div class="food-menu-box">
+                <div class="food-menu-img">
+                    <img src="chole-bhature.jpg" alt="Chole Bhature" class="img-responsive img-curve">
+                </div>
+
+                <div class="food-menu-desc">
+                    <h4>Chole Bhature</h4>
+                    <p class="food-price">₹120</p>
+                    <p class="food-detail">
+                        Spicy chickpeas served with fluffy fried bhature (bread), a North Indian classic.
+                    </p>
+                    <br>
+                    <a href="javascript:void(0);" class="btn btn-primary" onclick="addToOrder('Chole Bhature', 120)">Order Now</a>
+                </div>
+            </div>
+
+            <!-- Fifth Food Item -->
+            <div class="food-menu-box">
+                <div class="food-menu-img">
+                    <img src="tandoori-chicken.jpg" alt="Tandoori Chicken" class="img-responsive img-curve">
+                </div>
+
+                <div class="food-menu-desc">
+                    <h4>Tandoori Chicken</h4>
+                    <p class="food-price">₹250</p>
+                    <p class="food-detail">
+                        Marinated chicken grilled in a tandoor with aromatic spices, served with mint chutney.
+                    </p>
+                    <br>
+                    <a href="javascript:void(0);" class="btn btn-primary" onclick="addToOrder('Tandoori Chicken', 250)">Order Now</a>
+                </div>
+            </div>
+
+            <!-- Sixth Food Item -->
+            <div class="food-menu-box">
+                <div class="food-menu-img">
+                    <img src="vegetable-biryani.jpg" alt="Veg Biryani" class="img-responsive img-curve">
+                </div>
+
+                <div class="food-menu-desc">
+                    <h4>Veg Biryani</h4>
+                    <p class="food-price">₹150</p>
+                    <p class="food-detail">
+                        Aromatic basmati rice cooked with a variety of vegetables and spices, served with raita.
+                    </p>
+                    <br>
+                    <a href="javascript:void(0);" class="btn btn-primary" onclick="addToOrder('Veg Biryani', 150)">Order Now</a>
+                </div>
+            </div>
+
+            <div class="clearfix"></div>
+        </div>
+    </section>
+    <!-- Restaurant Menu Section Ends Here -->
+
+    <!-- Order Summary Section -->
+    <div class="container order-summary" id="order-summary" style="display: none;">
+        <h3>Your Order</h3>
+        <div id="order-items"></div>
+        <button class="btn-confirm" onclick="confirmOrder()">Confirm Order</button>
+    </div>
+
+    <!-- Footer Section Starts Here -->
+    <section class="footer">
+        <div class="container text-center">
+            <p>All rights reserved. Designed By <a href="#">NITHYA SHREE</a></p>
+        </div>
+    </section>
+    <!-- Footer Section Ends Here -->
+
+    <script>
+        let order = [];
+
+        function addToOrder(item, price) {
+            const existingItem = order.find(orderItem => orderItem.name === item);
+
+            if (existingItem) {
+                existingItem.quantity++;
+            } else {
+                order.push({ name: item, price: price, quantity: 1 });
+            }
+
+            updateOrderSummary();
+        }
+
+        function updateOrderSummary() {
+            const orderSummary = document.getElementById('order-summary');
+            const orderItemsDiv = document.getElementById('order-items');
+            orderItemsDiv.innerHTML = '';
+
+            if (order.length > 0) {
+                order.forEach(orderItem => {
+                    const itemDiv = document.createElement('div');
+                    itemDiv.className = 'order-item';
+                    itemDiv.innerHTML = `<span>${orderItem.name} (x${orderItem.quantity})</span><span>₹${orderItem.price * orderItem.quantity}</span>`;
+                    orderItemsDiv.appendChild(itemDiv);
+                });
+
+                orderSummary.style.display = 'block';
+            } else {
+                orderSummary.style.display = 'none';
+            }
+        }
+        function confirmOrder() {
+    if (order.length > 0) {
+        // Pass order details to the payment page
+        const orderDetails = encodeURIComponent(JSON.stringify(order));
+        window.location.href = `payment.html?order=${orderDetails}`;
+    } else {
+        alert('Your order is empty!');
+    }
+}
+
+    </script>
+</body>
+
+</html>

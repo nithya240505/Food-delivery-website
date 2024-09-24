@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment - Amutha Restaurant</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .order-summary {
+            margin-bottom: 20px;
+        }
+
+        .order-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .total {
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-top: 20px;
+        }
+
+        .btn-payment {
+            display: block;
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .btn-payment:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Payment Summary</h2>
+        <div class="order-summary" id="order-summary">
+            <!-- Order items will be dynamically inserted here -->
+        </div>
+        <div class="total" id="total-amount">
+            <!-- Total amount will be displayed here -->
+        </div>
+        <br>
+        <a href="confirmation.html" class="btn-payment">Proceed to Payment</a>
+    </div>
+
+    <script>
+        function getOrderDetails() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const order = JSON.parse(decodeURIComponent(urlParams.get('order')));
+            return order;
+        }
+
+        function displayOrderDetails() {
+            const order = getOrderDetails();
+            const orderSummaryDiv = document.getElementById('order-summary');
+            let totalAmount = 0;
+
+            order.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                totalAmount += itemTotal;
+
+                const itemDiv = document.createElement('div');
+                itemDiv.className = 'order-item';
+                itemDiv.innerHTML = `<span>${item.name} (x${item.quantity})</span><span>₹${itemTotal}</span>`;
+                orderSummaryDiv.appendChild(itemDiv);
+            });
+
+            // Add delivery charge of ₹50
+            const deliveryCharge = 50;
+            totalAmount += deliveryCharge;
+
+            // Display delivery charge
+            const deliveryDiv = document.createElement('div');
+            deliveryDiv.className = 'order-item';
+            deliveryDiv.innerHTML = `<span>Delivery Charge</span><span>₹${deliveryCharge}</span>`;
+            orderSummaryDiv.appendChild(deliveryDiv);
+
+            // Display total amount
+            const totalDiv = document.getElementById('total-amount');
+            totalDiv.innerHTML = `<span>Total Amount: ₹${totalAmount}</span>`;
+        }
+
+        window.onload = displayOrderDetails;
+    </script>
+</body>
+
+</html>

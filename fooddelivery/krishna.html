@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kailash Menu</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        h1 {
+            width: 300px;  /* Set a specific width */
+            margin: 0 auto; /* Centers horizontally */
+        }
+        .food-menu-img img {
+            width: 120px;  /* Set a fixed width for all images */
+            height: 150px;  /* Set a fixed height for all images */
+            object-fit: cover;  /* Ensure the image scales properly and maintains its aspect ratio */
+        }
+        .clearfix {
+            clear: both;
+        }
+        .order-summary {
+            display: none;
+            margin-top: 20px;
+        }
+        .order-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 0;
+        }
+        .btn-confirm {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar Section -->
+    <section class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html" title="Logo">
+                    <img src="logo.png" alt="Restaurant Logo" class="img-responsive">
+                </a>
+            </div>
+
+            <div class="menu text-right">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="restaurants.html">Restaurants</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="clearfix"></div>
+        </div>
+    </section>
+    <!-- Navbar Section Ends Here -->
+
+    <h1>Kailash Menu</h1>
+
+    <!-- Menu Section Starts Here -->
+    <section class="food-menu">
+        <div class="container">
+            <!-- Sambar Rice -->
+            <div class="food-menu-box">
+                <div class="food-menu-img">
+                    <img src="sambar-rice.jpg" alt="Sambar Rice" class="img-responsive img-curve">
+                </div>
+                <div class="food-menu-desc">
+                    <h4>Sambar Rice</h4>
+                    <p class="food-price">₹90</p>
+                    <p class="food-detail">
+                        Steamed rice mixed with flavorful sambar, served with papad and pickle.
+                    </p>
+                    <div class="clearfix"></div>
+                    <br>
+                    <button class="btn btn-primary" onclick="addToOrder('Sambar Rice', 90)">Order Now</button>
+                </div>
+            </div>
+
+            <!-- Curd Rice -->
+            <div class="food-menu-box">
+                <div class="food-menu-img">
+                    <img src="curd-rice.jpg" alt="Curd Rice" class="img-responsive img-curve">
+                </div>
+                <div class="food-menu-desc">
+                    <h4>Curd Rice</h4>
+                    <p class="food-price">₹70</p>
+                    <p class="food-detail">
+                        Cool and refreshing curd mixed with soft rice, tempered with mustard seeds, curry leaves, and garnished with pomegranate seeds.
+                    </p>
+                    <div class="clearfix"></div>
+                    <br>
+                    <button class="btn btn-primary" onclick="addToOrder('Curd Rice', 70)">Order Now</button>
+                </div>
+            </div>
+
+            <!-- Lemon Rice -->
+            <div class="food-menu-box">
+                <div class="food-menu-img">
+                    <img src="lemon_rice.jpg" alt="Lemon Rice" class="img-responsive img-curve">
+                </div>
+                <div class="food-menu-desc">
+                    <h4>Lemon Rice</h4>
+                    <p class="food-price">₹80</p>
+                    <p class="food-detail">
+                        Fragrant rice seasoned with lemon juice, turmeric, curry leaves, and peanuts.
+                    </p>
+                    <div class="clearfix"></div>
+                    <br>
+                    <button class="btn btn-primary" onclick="addToOrder('Lemon Rice', 80)">Order Now</button>
+                </div>
+            </div>
+
+            <!-- Bisi Bele Bath -->
+            <div class="food-menu-box">
+                <div class="food-menu-img">
+                    <img src="bisibelebath.jpg" alt="Bisi Bele Bath" class="img-responsive img-curve">
+                </div>
+                <div class="food-menu-desc">
+                    <h4>Bisi Bele Bath</h4>
+                    <p class="food-price">₹100</p>
+                    <p class="food-detail">
+                        A wholesome dish made with rice, lentils, vegetables, and a unique blend of spices, served hot.
+                    </p>
+                    <div class="clearfix"></div>
+                    <br>
+                    <button class="btn btn-primary" onclick="addToOrder('Bisi Bele Bath', 100)">Order Now</button>
+                </div>
+            </div>
+
+            <!-- Rasam Rice -->
+            <div class="food-menu-box">
+                <div class="food-menu-img">
+                    <img src="rasam_rice.jpg" alt="Rasam Rice" class="img-responsive img-curve">
+                </div>
+                <div class="food-menu-desc">
+                    <h4>Rasam Rice</h4>
+                    <p class="food-price">₹70</p>
+                    <p class="food-detail">
+                        Steamed rice served with a tangy and spicy rasam, a traditional South Indian soup.
+                    </p>
+                    <div class="clearfix"></div>
+                    <br>
+                    <button class="btn btn-primary" onclick="addToOrder('Rasam Rice', 70)">Order Now</button>
+                </div>
+            </div>
+
+            <!-- Vegetable Kurma with Parotta -->
+            <div class="food-menu-box">
+                <div class="food-menu-img">
+                    <img src="parotta.jpg" alt="Vegetable Kurma with Parotta" class="img-responsive img-curve">
+                </div>
+                <div class="food-menu-desc">
+                    <h4>Vegetable Kurma with Parotta</h4>
+                    <p class="food-price">₹120</p>
+                    <p class="food-detail">
+                        Soft and flaky parottas served with rich and creamy vegetable kurma, a South Indian favorite.
+                    </p>
+                    <div class="clearfix"></div>
+                    <br>
+                    <button class="btn btn-primary" onclick="addToOrder('Vegetable Kurma with Parotta', 120)">Order Now</button>
+                </div>
+            </div>
+
+            <div class="clearfix"></div>
+        </div>
+    </section>
+    <!-- Menu Section Ends Here -->
+
+    <!-- Order Summary Section -->
+    <div class="container order-summary" id="order-summary">
+        <h3>Your Order</h3>
+        <div id="order-items"></div>
+        <button class="btn-confirm" onclick="confirmOrder()">Confirm Order</button>
+    </div>
+
+    <!-- Footer Section Starts Here -->
+    <section class="footer">
+        <div class="container text-center">
+            <p>All rights reserved. Designed By <a href="#">NITHYA SHREE</a></p>
+        </div>
+    </section>
+    <!-- Footer Section Ends Here -->
+
+    <script>
+        let order = [];
+
+        function addToOrder(item, price) {
+            const existingItem = order.find(orderItem => orderItem.name === item);
+
+            if (existingItem) {
+                existingItem.quantity++;
+            } else {
+                order.push({ name: item, price: price, quantity: 1 });
+            }
+
+            updateOrderSummary();
+        }
+
+        function updateOrderSummary() {
+            const orderSummary = document.getElementById('order-summary');
+            const orderItemsDiv = document.getElementById('order-items');
+            orderItemsDiv.innerHTML = '';
+
+            if (order.length > 0) {
+                order.forEach(orderItem => {
+                    const itemDiv = document.createElement('div');
+                    itemDiv.className = 'order-item';
+                    itemDiv.innerHTML = `<span>${orderItem.name} (x${orderItem.quantity})</span><span>₹${orderItem.price * orderItem.quantity}</span>`;
+                    orderItemsDiv.appendChild(itemDiv);
+                });
+
+                orderSummary.style.display = 'block';
+            } else {
+                orderSummary.style.display = 'none';
+            }
+        }
+
+        function confirmOrder() {
+            if (order.length > 0) {
+                // Pass order details to the payment page
+                const orderDetails = encodeURIComponent(JSON.stringify(order));
+                window.location.href = `payment.html?order=${orderDetails}`;
+            } else {
+                alert('Your order is empty!');
+            }
+        }
+    </script>
+
+</body>
+</html>

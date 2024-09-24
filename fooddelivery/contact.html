@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Restaurant</title>
+
+    <!-- Link CSS file -->
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Basic styling for the contact form */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-form h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .contact-form label {
+            font-size: 14px;
+            color: #333;
+        }
+
+        .contact-form input[type="text"],
+        .contact-form input[type="email"],
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+            height: 150px;
+        }
+
+        .contact-form button {
+            padding: 10px 20px;
+            background-color: #ff6b81;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .contact-form button:hover {
+            background-color: #ff4b61;
+        }
+
+        .contact-details {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .contact-details h3 {
+            margin-bottom: 10px;
+        }
+
+        .contact-details p {
+            margin: 5px 0;
+        }
+
+        /* Social media icons styling */
+        .social {
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .social img {
+            width: 40px;
+            margin: 0 10px;
+            transition: transform 0.3s;
+        }
+
+        .social img:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar Section Starts Here -->
+    <section class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html" title="Logo">
+                    <img src="logo.png" alt="Restaurant Logo" class="img-responsive">
+                </a>
+            </div>
+
+            <div class="menu text-right">
+                <ul>
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="restaurant.html">Restaurants</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="clearfix"></div>
+        </div>
+    </section>
+    <!-- Navbar Section Ends Here -->
+
+    <!-- Contact Form Section Starts Here -->
+    <section class="contact-form">
+        <h2>Contact Us</h2>
+        <form action="submit_form.php" method="POST">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Enter your message" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+    <!-- Contact Form Section Ends Here -->
+
+    <!-- Contact Details Section Starts Here -->
+    <section class="contact-details">
+        <h3>Our Contact Details</h3>
+        <p><strong>Phone:</strong> +91xxxxxxxxxxx</p>
+        <p><strong>Email:</strong> nithya@restaurant.com</p>
+        <p><strong>Address:</strong> 123, Main Street, Erode, India</p>
+    </section>
+    <!-- Contact Details Section Ends Here -->
+
+    <!-- Social Media Section Starts Here -->
+    <section class="social">
+        <div class="container text-center">
+            <a href="#"><img src="https://img.icons8.com/fluent/50/000000/facebook-new.png"/></a>
+            <a href="#"><img src="https://img.icons8.com/fluent/48/000000/instagram-new.png"/></a>
+            <a href="#"><img src="https://img.icons8.com/fluent/48/000000/twitter.png"/></a>
+        </div>
+    </section>
+    <!-- Social Media Section Ends Here -->
+
+    <!-- Footer Section Starts Here -->
+    <section class="footer">
+        <div class="container text-center">
+            <p>All rights reserved. Designed By <a href="#">NITHYA SHREE</a></p>
+        </div>
+    </section>
+    <!-- Footer Section Ends Here -->
+
+</body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Important to make website responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Website</title>
+
+    <!-- Link our CSS file -->
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Styling for search bar */
+        .search-bar {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .search-bar input[type="text"] {
+            padding: 10px;
+            width: 50%;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        /* Additional styling for restaurants */
+        .box-3 {
+            margin-bottom: 20px;
+        }
+
+        /* Styling for the 'No results found' message */
+        .no-results {
+            text-align: center;
+            font-size: 18px;
+            color: red;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar Section Starts Here -->
+    <section class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="#" title="Logo">
+                    <img src="logo.png" alt="Restaurant Logo" class="img-responsive">
+                </a>
+            </div>
+
+            <div class="menu text-right">
+                <ul>
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="restaurant.html">Restaurants</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="clearfix"></div>
+        </div>
+    </section>
+    <!-- Navbar Section Ends Here -->
+
+    <!-- Search Bar Section -->
+    <section class="search-bar">
+        <input type="text" id="searchInput" onkeyup="searchRestaurants()" placeholder="Search for restaurants...">
+    </section>
+
+    <!-- Categories Section Starts Here -->
+    <section class="categories">
+        <div class="container">
+            <h2 class="text-center">Explore Restaurants</h2>
+
+            <!-- 'No results found' message -->
+            <div class="no-results" id="noResults">No results found</div>
+
+            <div id="restaurantList">
+                <a href="am.html">
+                    <div class="box-3 float-container">
+                        <img src="AM.jpg" alt="AM Biriyani" class="img-responsive img-curve fixed-size">
+                        <h3 class="float-text text-white">AM Biriyani</h3>
+                    </div>
+                </a>
+
+                <a href="kailash.html">
+                    <div class="box-3 float-container">
+                        <img src="kailash.jpg" alt="Kailash" class="img-responsive img-curve fixed-size">
+                        <h3 class="float-text text-white">Kailash</h3>
+                    </div>
+                </a>
+
+                <a href="krishna.html">
+                    <div class="box-3 float-container">
+                        <img src="krishna.jpg" alt="Sri Krishna" class="img-responsive img-curve fixed-size">
+                        <h3 class="float-text text-white">Sri Krishna</h3>
+                    </div>
+                </a>
+
+                <a href="kongu.html">
+                    <div class="box-3 float-container">
+                        <img src="kongu.jpg" alt="Kongu Parotta Stall" class="img-responsive img-curve fixed-size">
+                        <h3 class="float-text text-white">Kongu Parotta Stall</h3>
+                    </div>
+                </a>
+
+                <a href="pizzahut.html">
+                    <div class="box-3 float-container">
+                        <img src="pizza hut.webp" alt="Pizza Hut" class="img-responsive img-curve fixed-size">
+                        <h3 class="float-text text-white">Pizza Hut</h3>
+                    </div>
+                </a>
+
+                <a href="amutha.html">
+                    <div class="box-3 float-container">
+                        <img src="amutha.jpg" alt="Amutha" class="img-responsive img-curve fixed-size">
+                        <h3 class="float-text text-white">Amutha</h3>
+                    </div>
+                </a>
+            </div>
+
+            <div class="clearfix"></div>
+        </div>
+    </section>
+    <!-- Categories Section Ends Here -->
+
+    <!-- Social Section Starts Here -->
+    <section class="social">
+        <div class="container text-center">
+            <ul>
+                <li>
+                    <a href="#"><img src="https://img.icons8.com/fluent/50/000000/facebook-new.png"/></a>
+                </li>
+                <li>
+                    <a href="#"><img src="https://img.icons8.com/fluent/48/000000/instagram-new.png"/></a>
+                </li>
+                <li>
+                    <a href="#"><img src="https://img.icons8.com/fluent/48/000000/twitter.png"/></a>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <!-- Social Section Ends Here -->
+
+    <!-- Footer Section Starts Here -->
+    <section class="footer">
+        <div class="container text-center">
+            <p>All rights reserved. Designed By <a href="#">NITHYA SHREE</a></p>
+        </div>
+    </section>
+    <!-- Footer Section Ends Here -->
+
+    <script>
+        function searchRestaurants() {
+            // Get the search input
+            const input = document.getElementById('searchInput');
+            const filter = input.value.toLowerCase();
+
+            // Get all the restaurant items
+            const restaurantList = document.getElementById('restaurantList');
+            const restaurants = restaurantList.getElementsByClassName('float-container');
+
+            // Variable to track if any restaurant is displayed
+            let hasResult = false;
+
+            // Loop through all restaurant items and hide those that don't match the search
+            for (let i = 0; i < restaurants.length; i++) {
+                const restaurantName = restaurants[i].getElementsByTagName('h3')[0].innerText.toLowerCase();
+                
+                if (restaurantName.includes(filter)) {
+                    restaurants[i].style.display = '';
+                    hasResult = true;
+                } else {
+                    restaurants[i].style.display = 'none';
+                }
+            }
+
+            // Display 'No results found' if no match
+            const noResults = document.getElementById('noResults');
+            if (hasResult) {
+                noResults.style.display = 'none';
+            } else {
+                noResults.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
